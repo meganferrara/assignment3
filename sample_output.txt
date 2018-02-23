@@ -1,0 +1,44 @@
+Lab 3 Sample Runs
+
+Below are a few sample runs that can help you check to see if you're on the right track. The input file contains the following data:
+
+<DOC>
+a a b
+<\DOC>
+<DOC>
+b b b a c b
+<\DOC>
+<DOC>
+d e f
+<\DOC>
+
+- Search system = new Search(reader, Index.TERM_MODIFIER.l, Index.DOC_MODIFIER.t, Index.LENGTH_MODIFIER.n);
+a
+0:0.686512104608772 1:0.4054651081081644
+
+b
+1:0.9675591011093796 0:0.4054651081081644
+a b
+1:1.373024209217544 0:1.0919772127169365
+
+a a b
+0:1.7784893173257084 1:1.7784893173257084
+
+- Search system = new Search(reader, Index.TERM_MODIFIER.l, Index.DOC_MODIFIER.n, Index.LENGTH_MODIFIER.c);
+a
+0:0.8610369959439763 1:0.3605060838262402
+
+b
+1:0.8602736349839717 0:0.5085423203783267
+
+a b
+0:1.369579316322303 1:1.2207797188102119
+
+- Search system = new Search(reader, Index.TERM_MODIFIER.l, Index.DOC_MODIFIER.t, Index.LENGTH_MODIFIER.c);
+a
+0:0.8610369959439765 1:0.2669196867912574
+
+b
+1:0.6369489434618649 0:0.5085423203783268
+a b
+0:1.3695793163223033 1:0.903868630253122
